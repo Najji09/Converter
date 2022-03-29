@@ -1,0 +1,29 @@
+[
+  {},
+  {
+    "unit1": "Minutes",
+    "unit2": "Hours",
+    "unitConvert": 60
+  },
+
+  {
+    "unit1": "Miles",
+    "unit2": "Killometers",
+    "unitConvert": 1.65
+  },
+  {
+    "unit1": "Centimeters",
+    "unit2": "Feet",
+    "unitConvert": 30.5
+  },
+  {
+    "unit1": "Pound",
+    "unit2": "Killogram",
+    "unitConvert": 2.2
+  },
+  {
+    "unit1": "Litter",
+    "unit2": "Gallon",
+    "unitConvert": 3.8
+  }
+]
