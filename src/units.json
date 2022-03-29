@@ -5,7 +5,11 @@
     "unit2": "Hours",
     "unitConvert": 60
   },
-
+  {
+    "unit1": "Hours",
+    "unit2": "Days",
+    "unitConvert": 24
+  },
   {
     "unit1": "Miles",
     "unit2": "Killometers",
