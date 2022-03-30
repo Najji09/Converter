@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
-function Converter(props) {
-  const [amount, setAmount] = React.useState('');
-  const onChange = (event) => {
-    setAmount(event.target.value);
-  };
+function Converter({ unit1, unit2, unitConvert, amount, setAmount }) {
   const reset = () => {
-    setAmount(0);
+    setAmount('');
   };
+  const onChange = useCallback(
+    (event) => {
+      setAmount(event.target.value);
+    },
+    [setAmount]
+  );
+
   const [flipped, SetFlipped] = React.useState(false);
   const onFlip = () => {
     reset();
@@ -17,30 +20,28 @@ function Converter(props) {
   return (
     <div>
       <h3>
-        {props.unit1} and {props.unit2}
+        {unit1} and {unit2}
       </h3>
       <div>
-        <label htmlFor={props.unit1}>{props.unit1}</label>
+        <label htmlFor={unit1}>{unit1}</label>
         <input
-          id={props.unit1}
-          placeholder={props.unit1}
+          id={unit1}
+          placeholder={unit1}
           type="number"
-          value={flipped ? amount * props.unitConvert : amount}
+          value={flipped ? amount * unitConvert : amount}
           onChange={onChange}
           disabled={flipped}
         />
       </div>
       <br />
       <div>
-        <label htmlFor={props.unit2}>{props.unit2}</label>
+        <label htmlFor={unit2}>{unit2}</label>
         <input
           value={
-            flipped
-              ? amount
-              : Math.round((amount / props.unitConvert) * 10) / 10
+            flipped ? amount : Math.round((amount / unitConvert) * 10) / 10
           }
-          id={props.unit2}
-          placeholder={props.unit2}
+          id={unit2}
+          placeholder={unit2}
           type="
           number"
           disabled={!flipped}
@@ -50,7 +51,7 @@ function Converter(props) {
       <button onClick={reset}>Reset button</button>
       <button onClick={onFlip}>
         Type
-        {flipped ? props.unit1 : props.unit2}
+        {flipped ? unit1 : unit2}
       </button>
     </div>
   );
