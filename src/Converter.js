@@ -38,7 +38,7 @@ function Converter({ unit1, unit2, unitConvert, amount, setAmount }) {
         <label htmlFor={unit2}>{unit2}</label>
         <input
           value={
-            flipped ? amount : Math.round((amount / unitConvert) * 10) / 10
+            flipped ? amount : Math.round((amount / unitConvert) * 100) / 100
           }
           id={unit2}
           placeholder={unit2}
